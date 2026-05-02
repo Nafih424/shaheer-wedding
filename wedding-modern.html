@@ -422,6 +422,10 @@
                         <p id="groom-father"></p>
                         <p id="groom-mother"></p>
                     </div>
+                    <div class="parent-info" style="margin-top: 1rem;">
+                        <span class="parent-label">Family</span>
+                        <div id="groom-siblings" style="font-size: 0.95rem; line-height: 1.5; opacity: 0.9;"></div>
+                    </div>
                 </div>
 
                 <!-- Bride -->
@@ -433,6 +437,10 @@
                         <span class="parent-label">Parents</span>
                         <p id="bride-father"></p>
                         <p id="bride-mother"></p>
+                    </div>
+                    <div class="parent-info" style="margin-top: 1rem;">
+                        <span class="parent-label">Family</span>
+                        <div id="bride-siblings" style="font-size: 0.95rem; line-height: 1.5; opacity: 0.9;"></div>
                     </div>
                 </div>
             </div>
@@ -477,7 +485,12 @@
                 father: "Mohammed Ali. M",
                 mother: "Jameela. T",
                 house: "Maruthayil House",
-                location: "Alungal"
+                location: "Alungal",
+                siblings: [
+                    "Abdul Varis. M & Safareena",
+                    "Abdul Latheer. M & Henna Faize",
+                    "Mufeeda. M & Jafar"
+                ]
             },
             bride: {
                 firstName: "Thaskina",
@@ -485,7 +498,11 @@
                 father: "Ummer. K.P",
                 mother: "Souda. K",
                 house: "ARUVATHODI HOUSE",
-                location: "VELIMUKKU"
+                location: "VELIMUKKU",
+                siblings: [
+                    "Thashmeer. K. P & Hasnath",
+                    "Thabshira. K. P & Arshad"
+                ]
             },
             event: {
                 dateShort: "MAY 14 · 2026",
@@ -508,11 +525,13 @@
             document.getElementById('groom-house').textContent = WEDDING_DATA.groom.house;
             document.getElementById('groom-father').textContent = WEDDING_DATA.groom.father;
             document.getElementById('groom-mother').textContent = WEDDING_DATA.groom.mother;
+            document.getElementById('groom-siblings').innerHTML = WEDDING_DATA.groom.siblings.join('<br>');
 
             document.getElementById('bride-name').textContent = `${WEDDING_DATA.bride.firstName} ${WEDDING_DATA.bride.lastName}`;
             document.getElementById('bride-house').textContent = WEDDING_DATA.bride.house;
             document.getElementById('bride-father').textContent = WEDDING_DATA.bride.father;
             document.getElementById('bride-mother').textContent = WEDDING_DATA.bride.mother;
+            document.getElementById('bride-siblings').innerHTML = WEDDING_DATA.bride.siblings.join('<br>');
 
             document.getElementById('event-date-full').textContent = WEDDING_DATA.event.dateFull;
             document.getElementById('event-time').textContent = WEDDING_DATA.event.time;

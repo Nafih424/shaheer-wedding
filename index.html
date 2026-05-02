@@ -1343,6 +1343,10 @@
                             <div class="member-label">Mother</div>
                             <div class="member-name" id="fam-groom-mother">Mother Name</div>
                         </div>
+                        <div class="member-group" id="fam-groom-siblings-group">
+                            <div class="member-label">Family</div>
+                            <div class="member-name" id="fam-groom-siblings" style="font-size: 15px; line-height: 1.6;"></div>
+                        </div>
                     </div>
 
                     <div class="family-divider reveal">
@@ -1362,6 +1366,10 @@
                         <div class="member-group">
                             <div class="member-label">Mother</div>
                             <div class="member-name" id="fam-bride-mother">Mother Name</div>
+                        </div>
+                        <div class="member-group" id="fam-bride-siblings-group">
+                            <div class="member-label">Family</div>
+                            <div class="member-name" id="fam-bride-siblings" style="font-size: 15px; line-height: 1.6;"></div>
                         </div>
                     </div>
                 </div>
@@ -1471,7 +1479,12 @@
                 father: "Mohammed Ali. M",
                 mother: "Jameela. T",
                 house: "Maruthayil House",
-                location: "Alungal"
+                location: "Alungal",
+                siblings: [
+                    "Abdul Varis. M & Safareena",
+                    "Abdul Latheer. M & Henna Faize",
+                    "Mufeeda. M & Jafar"
+                ]
             },
             bride: {
                 firstName: "Thaskina",
@@ -1479,7 +1492,11 @@
                 father: "Ummer. K.P",
                 mother: "Souda. K",
                 house: "ARUVATHODI HOUSE",
-                location: "VELIMUKKU"
+                location: "VELIMUKKU",
+                siblings: [
+                    "Thashmeer. K. P & Hasnath",
+                    "Thabshira. K. P & Arshad"
+                ]
             },
             event: {
                 dateShort: "MAY 14 · 2026",
@@ -1516,11 +1533,13 @@
             document.getElementById('fam-groom-house').textContent = WEDDING_DATA.groom.house;
             document.getElementById('fam-groom-father').textContent = WEDDING_DATA.groom.father;
             document.getElementById('fam-groom-mother').textContent = WEDDING_DATA.groom.mother;
+            document.getElementById('fam-groom-siblings').innerHTML = WEDDING_DATA.groom.siblings.join('<br>');
 
             document.getElementById('fam-bride-name').textContent = `${WEDDING_DATA.bride.firstName} ${WEDDING_DATA.bride.lastName}`;
             document.getElementById('fam-bride-house').textContent = WEDDING_DATA.bride.house;
             document.getElementById('fam-bride-father').textContent = WEDDING_DATA.bride.father;
             document.getElementById('fam-bride-mother').textContent = WEDDING_DATA.bride.mother;
+            document.getElementById('fam-bride-siblings').innerHTML = WEDDING_DATA.bride.siblings.join('<br>');
 
             // Events
             document.getElementById('event-date').textContent = WEDDING_DATA.event.dateFull;
